@@ -59,11 +59,30 @@ namespace ModelHandling.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,ProductName,ProductCatDescription,Price,ImageUrl,CategoryId")] Products products,IFormFile file)
         {
+            ModelState.Remove("ImageUrl");
+            if (!ModelState.IsValid)
+            {
+                return View(products);
+            }
+            if (file == null || file.Length == 0)
+            {
+                ViewBag.Error = "Please Upload an image";
+                return View(products);
+
+            }
+            string extension =Path.GetExtension(file.FileName).ToLower();
+            var allowedextension = new[] { ".jpg",".jpeg",".png" };
+            if (!allowedextension.Contains(extension))
+            {
+                ViewBag.Error = "Only jpg,png,jpeg are allowed";
+                return View(products);
+            }
             string filestore = Path.Combine(_env.WebRootPath, "uploads");
             if (!Directory.Exists(filestore))
             {
                 Directory.CreateDirectory(filestore);
             }
+
             if (file != null && file.Length > 0)
             {
                 string filename = Path.GetFileName(file.FileName);
