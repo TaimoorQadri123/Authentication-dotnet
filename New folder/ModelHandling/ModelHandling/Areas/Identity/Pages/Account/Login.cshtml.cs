@@ -116,7 +116,19 @@ namespace ModelHandling.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    return LocalRedirect(returnUrl);
+                     
+                    var user = await _signInManager.UserManager.FindByEmailAsync(Input.Email);
+                    
+                    if(await _signInManager.UserManager.IsInRoleAsync(user,"Admin"))
+                    {
+                        return LocalRedirect("/AdminDashboard/Index");
+                    }
+                    else
+                    {
+                        return LocalRedirect("/Home/Index");
+                    }
+
+                   
                 }
                 if (result.RequiresTwoFactor)
                 {

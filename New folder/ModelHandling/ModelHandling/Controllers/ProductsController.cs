@@ -48,7 +48,7 @@ namespace ModelHandling.Controllers
         // GET: Products/Create
         public IActionResult Create()
         {
-            ViewData["CategoryId"] = new SelectList(_context.Category, "Id", "Id");
+            ViewData["CategoryId"] = new SelectList(_context.Category, "Id", "CatName");
             return View();
         }
 
@@ -83,24 +83,23 @@ namespace ModelHandling.Controllers
                 Directory.CreateDirectory(filestore);
             }
 
-            if (file != null && file.Length > 0)
-            {
-                string filename = Path.GetFileName(file.FileName);
+           
+                string filename =Guid.NewGuid().ToString()+extension;
                 string filepath = Path.Combine(filestore, filename);
                 using (var stream = new FileStream(filepath, FileMode.Create))
                 {
                     await file.CopyToAsync(stream);
                 }
                 products.ImageUrl = @$"\uploads\{filename}";
-            }
+            
             if (ModelState.IsValid)
             {
                 _context.Add(products);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                //return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoryId"] = new SelectList(_context.Category, "Id", "Id", products.CategoryId);
-            return View(products);
+            ViewData["CategoryId"] = new SelectList(_context.Category, "Id", "CatName", products.CategoryId);
+            return RedirectToAction("Index");
         }
 
         // GET: Products/Edit/5
@@ -116,7 +115,7 @@ namespace ModelHandling.Controllers
             {
                 return NotFound();
             }
-            ViewData["CategoryId"] = new SelectList(_context.Category, "Id", "Id", products.CategoryId);
+            ViewData["CategoryId"] = new SelectList(_context.Category, "Id", "CatName", products.CategoryId);
             return View(products);
         }
 
@@ -152,7 +151,7 @@ namespace ModelHandling.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoryId"] = new SelectList(_context.Category, "Id", "Id", products.CategoryId);
+            ViewData["CategoryId"] = new SelectList(_context.Category, "Id", "CatName", products.CategoryId);
             return View(products);
         }
 
