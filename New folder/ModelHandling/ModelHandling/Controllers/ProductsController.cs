@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -14,13 +15,13 @@ namespace ModelHandling.Controllers
     {
         private readonly AppDbContext _context;
         private readonly IWebHostEnvironment _env;
-        public ProductsController(AppDbContext context,IWebHostEnvironment env)
+        public ProductsController(AppDbContext context, IWebHostEnvironment env)
         {
             _context = context;
-            _env=env;   
+            _env = env;
         }
 
-
+        [Authorize(Roles = "Admin")]
         // GET: Products
         public async Task<IActionResult> Index()
         {
@@ -28,6 +29,7 @@ namespace ModelHandling.Controllers
             return View(await appDbContext.ToListAsync());
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Products/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -47,6 +49,7 @@ namespace ModelHandling.Controllers
             return View(products);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Products/Create
         public IActionResult Create()
         {
@@ -59,7 +62,7 @@ namespace ModelHandling.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ProductName,ProductCatDescription,Price,ImageUrl,CategoryId")] Products products,IFormFile file)
+        public async Task<IActionResult> Create([Bind("Id,ProductName,ProductCatDescription,Price,ImageUrl,CategoryId")] Products products, IFormFile file)
         {
             ModelState.Remove("ImageUrl");
             if (!ModelState.IsValid)
@@ -72,8 +75,8 @@ namespace ModelHandling.Controllers
                 return View(products);
 
             }
-            string extension =Path.GetExtension(file.FileName).ToLower();
-            var allowedextension = new[] { ".jpg",".jpeg",".png" };
+            string extension = Path.GetExtension(file.FileName).ToLower();
+            var allowedextension = new[] { ".jpg", ".jpeg", ".png" };
             if (!allowedextension.Contains(extension))
             {
                 ViewBag.Error = "Only jpg,png,jpeg are allowed";
@@ -85,15 +88,15 @@ namespace ModelHandling.Controllers
                 Directory.CreateDirectory(filestore);
             }
 
-           
-                string filename =Guid.NewGuid().ToString()+extension;
-                string filepath = Path.Combine(filestore, filename);
-                using (var stream = new FileStream(filepath, FileMode.Create))
-                {
-                    await file.CopyToAsync(stream);
-                }
-                products.ImageUrl = @$"\uploads\{filename}";
-            
+
+            string filename = Guid.NewGuid().ToString() + extension;
+            string filepath = Path.Combine(filestore, filename);
+            using (var stream = new FileStream(filepath, FileMode.Create))
+            {
+                await file.CopyToAsync(stream);
+            }
+            products.ImageUrl = @$"\uploads\{filename}";
+
             if (ModelState.IsValid)
             {
                 _context.Add(products);
@@ -104,6 +107,7 @@ namespace ModelHandling.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Products/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -157,6 +161,7 @@ namespace ModelHandling.Controllers
             return View(products);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Products/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -195,8 +200,12 @@ namespace ModelHandling.Controllers
         {
             return _context.Products.Any(e => e.Id == id);
         }
+        public async Task<IActionResult> GetAllProducts()
+        {
+            var products = await _context.Products.ToListAsync();
+            return View(products);
+        }
 
 
-
-    }
+    } 
 }

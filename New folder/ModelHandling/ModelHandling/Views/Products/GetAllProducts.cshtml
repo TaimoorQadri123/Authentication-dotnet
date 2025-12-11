@@ -1,0 +1,23 @@
+﻿@model List<Products>
+<h2 class="display-4">All Products</h2>
+
+<div class="row">
+
+    @foreach(var item in Model)
+    {
+        <div class="card" style="width: 18rem;">
+            <img src="@item.ImageUrl" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">@item.ProductName</h5>
+                <h5 class="card-title">@item.Price</h5>
+                <h5 class="card-title">@item.ProductCatDescription</h5>
+
+                <form method="post" asp-action="AddtoCart">
+                    <input type="hidden" name="productId" value="@item.Id" />
+                    <button class="btn btn-primary" type="submit">Add To Cart </button>
+                </form>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    }
+</div>

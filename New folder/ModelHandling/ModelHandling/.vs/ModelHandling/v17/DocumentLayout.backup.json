@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\admin\\Desktop\\Taimoor\\New folder\\ModelHandling\\ModelHandling\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{78213B89-502B-44E6-9BB1-3F9D35D80792}|ModelHandling.csproj|c:\\users\\admin\\desktop\\taimoor\\new folder\\modelhandling\\modelhandling\\controllers\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78213B89-502B-44E6-9BB1-3F9D35D80792}|ModelHandling.csproj|solutionrelative:controllers\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78213B89-502B-44E6-9BB1-3F9D35D80792}|ModelHandling.csproj|c:\\users\\admin\\desktop\\taimoor\\new folder\\modelhandling\\modelhandling\\views\\admindashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{78213B89-502B-44E6-9BB1-3F9D35D80792}|ModelHandling.csproj|solutionrelative:views\\admindashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{78213B89-502B-44E6-9BB1-3F9D35D80792}|ModelHandling.csproj|c:\\users\\admin\\desktop\\taimoor\\new folder\\modelhandling\\modelhandling\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{78213B89-502B-44E6-9BB1-3F9D35D80792}|ModelHandling.csproj|solutionrelative:controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,16 +23,8 @@
       "RelativeMoniker": "D:0:0:{78213B89-502B-44E6-9BB1-3F9D35D80792}|ModelHandling.csproj|solutionrelative:areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{78213B89-502B-44E6-9BB1-3F9D35D80792}|ModelHandling.csproj|c:\\users\\admin\\desktop\\taimoor\\new folder\\modelhandling\\modelhandling\\views\\admindashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{78213B89-502B-44E6-9BB1-3F9D35D80792}|ModelHandling.csproj|solutionrelative:views\\admindashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{78213B89-502B-44E6-9BB1-3F9D35D80792}|ModelHandling.csproj|c:\\users\\admin\\desktop\\taimoor\\new folder\\modelhandling\\modelhandling\\views\\products\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{78213B89-502B-44E6-9BB1-3F9D35D80792}|ModelHandling.csproj|solutionrelative:views\\products\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{78213B89-502B-44E6-9BB1-3F9D35D80792}|ModelHandling.csproj|c:\\users\\admin\\desktop\\taimoor\\new folder\\modelhandling\\modelhandling\\controllers\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{78213B89-502B-44E6-9BB1-3F9D35D80792}|ModelHandling.csproj|solutionrelative:controllers\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{78213B89-502B-44E6-9BB1-3F9D35D80792}|ModelHandling.csproj|c:\\users\\admin\\desktop\\taimoor\\new folder\\modelhandling\\modelhandling\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -121,7 +121,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -133,7 +133,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Login.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\Taimoor\\New folder\\ModelHandling\\ModelHandling\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
               "RelativeDocumentMoniker": "Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
@@ -146,7 +146,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\Taimoor\\New folder\\ModelHandling\\ModelHandling\\Views\\AdminDashboard\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\AdminDashboard\\Index.cshtml",
@@ -154,19 +154,21 @@
               "RelativeToolTip": "Views\\AdminDashboard\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-11T00:56:53.697Z"
+              "WhenOpened": "2025-12-11T00:56:53.697Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "AdminDashboard.cs",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\Taimoor\\New folder\\ModelHandling\\ModelHandling\\Controllers\\AdminDashboard.cs",
               "RelativeDocumentMoniker": "Controllers\\AdminDashboard.cs",
               "ToolTip": "C:\\Users\\admin\\Desktop\\Taimoor\\New folder\\ModelHandling\\ModelHandling\\Controllers\\AdminDashboard.cs",
               "RelativeToolTip": "Controllers\\AdminDashboard.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T00:56:06.699Z"
+              "WhenOpened": "2025-12-11T00:56:06.699Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -182,7 +184,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\Taimoor\\New folder\\ModelHandling\\ModelHandling\\Views\\Products\\Create.cshtml",
               "RelativeDocumentMoniker": "Views\\Products\\Create.cshtml",
@@ -230,7 +232,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\Taimoor\\New folder\\ModelHandling\\ModelHandling\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -243,13 +245,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ProductsController.cs",
               "DocumentMoniker": "C:\\Users\\admin\\Desktop\\Taimoor\\New folder\\ModelHandling\\ModelHandling\\Controllers\\ProductsController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProductsController.cs",
-              "ToolTip": "C:\\Users\\admin\\Desktop\\Taimoor\\New folder\\ModelHandling\\ModelHandling\\Controllers\\ProductsController.cs*",
-              "RelativeToolTip": "Controllers\\ProductsController.cs*",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAABMAAAAYAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\admin\\Desktop\\Taimoor\\New folder\\ModelHandling\\ModelHandling\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "Controllers\\ProductsController.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-04T07:12:31.444Z",
               "EditorCaption": ""
