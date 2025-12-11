@@ -14,10 +14,12 @@ namespace ModelHandling.Controllers
     {
         private readonly AppDbContext _context;
         private readonly IWebHostEnvironment _env;
-        public ProductsController(AppDbContext context)
+        public ProductsController(AppDbContext context,IWebHostEnvironment env)
         {
             _context = context;
+            _env=env;   
         }
+
 
         // GET: Products
         public async Task<IActionResult> Index()
@@ -193,5 +195,8 @@ namespace ModelHandling.Controllers
         {
             return _context.Products.Any(e => e.Id == id);
         }
+
+
+
     }
 }
